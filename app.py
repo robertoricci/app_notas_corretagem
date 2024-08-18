@@ -1,6 +1,7 @@
 import streamlit as st
 import pag_home
 import pag_import
+import pag_dasboard
 
 from streamlit_option_menu import option_menu
 
@@ -15,12 +16,13 @@ def main():
         st.write('Hello word')
         pages={
              "Home":page_home,
-             "Importar":page_import
+             "Importar":page_import,
+             "Dasboard":page_dasboard
         }
         
         with st.sidebar:
-            page = option_menu('Menu',['Home','Importar'],
-                               icons=['house','pen'],
+            page = option_menu('Menu',['Home','Importar','Dasboard'],
+                               icons=['house','pen','bar-chart'],
                                default_index=0,menu_icon='app-indicator',
                                 styles={
                                         "container": {"padding": "2!important", "background-color": "#ffffff","margin": "0px" },
@@ -36,6 +38,11 @@ def page_home():
 
 def page_import():
      pag_import.main()
+
+
+def page_dasboard():
+     pag_dasboard.main()
+
 
 
 if __name__ == "__main__":
