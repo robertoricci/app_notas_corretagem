@@ -2,8 +2,11 @@ import streamlit as st
 import pag_home
 import pag_import
 import pag_dasboard
+import pag_manut
 
 from streamlit_option_menu import option_menu
+
+
 
 st.set_page_config(  # Alternate names: setup_page, page, layout
     layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
@@ -11,18 +14,18 @@ st.set_page_config(  # Alternate names: setup_page, page, layout
     page_title="Notas Corretagem",  # String or None. Strings get appended with "• Streamlit". 
     page_icon= '',  # String, anything supported by st.image, or None.
 )
-
+st.html("styles.html")
 def main():
-        st.write('Hello word')
         pages={
              "Home":page_home,
              "Importar":page_import,
-             "Dasboard":page_dasboard
+             "Dasboard":page_dasboard,
+             "Manutencao":page_manut
         }
         
         with st.sidebar:
-            page = option_menu('Menu',['Home','Importar','Dasboard'],
-                               icons=['house','pen','bar-chart'],
+            page = option_menu('Menu',['Home','Importar','Dasboard','Manutencao'],
+                               icons=['house','pen','bar-chart','window'],
                                default_index=0,menu_icon='app-indicator',
                                 styles={
                                         "container": {"padding": "2!important", "background-color": "#ffffff","margin": "0px" },
@@ -42,6 +45,10 @@ def page_import():
 
 def page_dasboard():
      pag_dasboard.main()
+
+
+def page_manut():
+     pag_manut.main()
 
 
 
