@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "dpg-cqueek3qf0us73abflc0-a.oregon-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "desenv",
+            "database": "desenv2",
+            "username": "desenv",
+            "password": "eHK7hr1qMtHlF0bPO7ouUaIyOExcBosS"
+        }
+    ]
+}
