@@ -1,8 +1,8 @@
 import streamlit as st
-import pag_home
-import pag_import
-import pag_dasboard
-import pag_manut
+import pag.pag_home as pag_home
+import pag.pag_import as pag_import
+import pag.pag_dasboard as pag_dasboard
+import pag.pag_manut  as pag_manut
 
 from streamlit_option_menu import option_menu
 

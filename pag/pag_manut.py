@@ -13,22 +13,26 @@ def excluir_nota(corretora,nota):
       bd = RDSPostgreSQLManager()
       ret = bd.execute_notas(corretora,nota)
 
-      st.write(ret)
+      return ret
 
 def main():
     st.write('Manutenção')
 
     df_notas = selecionar_dados()
-    st.write(df_notas)
 
-    corretora_nota = st.selectbox("Selecione a Corretora:",options=df_notas)
+
+    st.dataframe(df_notas)
+   
+    corretora_nota = st.selectbox("Selecione a Corretora - Nota para excluir:",options=df_notas)
 
     if st.button('Excluir Nota de corretagem'):
         empresa, nota = corretora_nota.split("-")
         ret = excluir_nota(empresa,nota)
-        st.write('excluindo NF' + str(ret))
-
-
+        if (ret):
+            st.write('Nota excluida com sucesso')
+            st.rerun()
+        else:
+            st.write(str(ret))
 
 if __name__ == "__main__":
    main()

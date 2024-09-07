@@ -88,10 +88,10 @@ class RDSPostgreSQLManager:
                 connection.commit()
                 cursor.close()
                 connection.close()
-                print("Exclusão bem-sucedida.")
-                return 'Dados excluidos com sucesso'
+                return True
             else:
                 print("Não foi possível estabelecer a conexão com o banco de dados.")
+                return 'Não foi possível estabelecer a conexão com o banco de dados.'
         except psycopg2.Error as e:
             print(f"Erro ao executar a Exclusão SQL: {e}")
             return f"Erro ao executar a Exclusão SQL: {e}"
@@ -125,9 +125,10 @@ class RDSPostgreSQLManager:
                 cursor.close()
                 connection.close()
                 print("Exclusão bem-sucedida.")
-                return 'Exclusão bem-sucedida'
+                return True
             else:
                 print("Não foi possível estabelecer a conexão com o banco de dados.")
+                return 'Não foi possível estabelecer a conexão com o banco de dados.'
         except psycopg2.Error as e:
             if connection:
                 connection.rollback()
