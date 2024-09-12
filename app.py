@@ -14,7 +14,7 @@ st.set_page_config(  # Alternate names: setup_page, page, layout
     page_title="Notas Corretagem",  # String or None. Strings get appended with "• Streamlit". 
     page_icon= '',  # String, anything supported by st.image, or None.
 )
-st.html("styles.html")
+st.html("styles/styles.html")
 def main():
         pages={
              "Home":page_home,

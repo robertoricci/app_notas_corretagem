@@ -49,26 +49,28 @@ def main():
                 (df_filtered["ticker"].isin(ticker_selecionado)) 
                 ]
     
-    st.write(df_filtered)
     df_mov = df_filtered.groupby('cv')['movimentacao'].sum().reset_index()
 
-    col1,col2,col3 = st.columns([4,4,4])
+    col1,col2,col3,col4 = st.columns([3,3,3,3])
 
     with col1:
         st.html('<span class="Medio_indicator"></span>')
-        compra = df_mov[df_mov['cv']=='Compra'].values[0][1]
-        st.metric(label='Compra', value=f'R$ {round((compra ), 2):,.2f}')
+        st.metric(label='Total Tickers', value=len(df_filtered['ticker'].unique()))
 
     with col2:
         st.html('<span class="Medio_indicator"></span>')
-        venda = df_mov[df_mov['cv']=='Venda'].values[0][1]
-        st.metric(label='Venda', value=f'R$ {round((venda ), 2):,.2f}')
+        compra = df_mov[df_mov['cv']=='Compra'].values[0][1]
+        st.metric(label='Compra', value=f"R$ {compra:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
 
     with col3:
         st.html('<span class="Medio_indicator"></span>')
-        st.metric(label='Total Tickers', value=len(df_filtered['ticker'].unique()))
+        venda = df_mov[df_mov['cv']=='Venda'].values[0][1]
+        st.metric(label='Venda', value=f"R$ {venda:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
 
-
+    with col4:
+        st.html('<span class="Medio_indicator"></span>')
+        saldo =  venda - abs(compra)
+        st.metric(label='Saldo', value=f"R$ {saldo:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
 
     df_soma = df_filtered.groupby('ticker')['qted'].sum()
 

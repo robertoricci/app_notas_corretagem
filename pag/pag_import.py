@@ -132,26 +132,17 @@ def disable(b):
 
 def check_filename_contains(filenames,corretora):
     return [filename for filename in filenames if corretora not in filename.lower()]
+
 def main():
 
     tables = util.dic_tables()
-    st.write(tables)
-
-    st.title("Upload de Múltiplos PDFs")
-
-
-    if "disabled" not in st.session_state:
-          st.session_state["disabled"] = False
-
-    if "button_disabled" not in st.session_state:
-        st.session_state.button_disabled = False
-
-
-    if "processando" not in st.session_state:
-        st.session_state.processando = False
+    st.markdown('<h1 class="title">Importação de PDFs de corretora</h1>', unsafe_allow_html=True)
+    st.write("")
+    st.write("")
+    st.write("")
     
     with st.container(border=True):
-        st.markdown("<h2 style='text-align: center; padding: 0rem 0rem 0rem'>Corretora</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; padding: 0rem 0rem 0rem'>Importação</h2>", unsafe_allow_html=True)
         corretora = st.selectbox('Escolha a corretora',tables)
         uploaded_files = st.file_uploader("Escolha os arquivos PDF", type="pdf", accept_multiple_files=True)
         if uploaded_files:
