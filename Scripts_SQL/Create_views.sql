@@ -1,4 +1,4 @@
-
+--arquivos sql para criação das views
 
 CREATE OR REPLACE VIEW public.notas_corretagem_redrex 
 AS
