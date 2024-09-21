@@ -10,13 +10,7 @@ def selecionar_dados():
     return df 
 
 def main():
-    st.markdown("""
-                <style>
-                .title {
-                text-align: center;
-                }
-                </style>
-                """,unsafe_allow_html=True)
+    
     st.markdown('<h1 class="title">Dasboard</h1>', unsafe_allow_html=True)
 
     df = selecionar_dados()
@@ -100,12 +94,48 @@ def main():
     )
     st.altair_chart(movimentacao_chart, use_container_width=True)  
 
-    df_agrupado = df.groupby(['cv','data_de_pregao'])['movimentacao'].sum().reset_index()
+    df_agrupado = df_filtered.groupby(['data_de_pregao'])['movimentacao'].sum().reset_index()
 
-    df_agrupado.set_index('data_de_pregao',inplace=True)
+    ##df_agrupado.set_index('data_de_pregao',inplace=True)
+
+
+    ##df_filtered.set_index('data_de_pregao',inplace=True)
+
+    st.dataframe(df_agrupado)
+
+
+
+    import plotly.express as px
+
+
+    # fig = px.line(df_agrupado, 
+    #             x='data_de_pregao', 
+    #             y='movimentacao', 
+    #             color='ticker', 
+    #             title='Movimentação por Data e Ticker')
+
+    # # Exibir o gráfico no Streamlit
+    # st.plotly_chart(fig)
+
+  
     
+    df_agrupado['data_de_pregao'] = pd.to_datetime(df_agrupado['data_de_pregao'])
 
-    # df_agrupado.set_index('data_de_pregao',inplace=True)                         
+    fig = px.line(df_agrupado, x='data_de_pregao', y='movimentacao', title='Movimentação ao Longo do Tempo')
+
+    st.plotly_chart(fig)
+
+    df_sum = df_filtered.groupby('ticker')['movimentacao'].sum().reset_index()
+
+    # Criar o gráfico de barras
+    fig = px.bar(df_sum, 
+                x='ticker', 
+                y='movimentacao', 
+                color='ticker', 
+                title='Soma das Movimentações por Ticker')
+
+    # Exibir o gráfico no Streamlit
+    st.plotly_chart(fig)                      
 
 
 

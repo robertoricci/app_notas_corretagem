@@ -16,11 +16,11 @@ def excluir_nota(corretora,nota):
       return ret
 
 def main():
-    st.write('Manutenção')
+    st.markdown('<h1 class="title">Manutenção</h1>', unsafe_allow_html=True)
 
     df_notas = selecionar_dados()
 
-
+    st.subheader('Nota importadas')
     st.dataframe(df_notas)
    
     corretora_nota = st.selectbox("Selecione a Corretora - Nota para excluir:",options=df_notas)

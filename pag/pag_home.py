@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def main():
-    st.write('home')
+    st.markdown('<h1 class="title">Home</h1>', unsafe_allow_html=True)
 
     st.markdown("""### Projeto: Importação de PDF de Notas de Corretagem
 

@@ -142,16 +142,25 @@ def main():
     st.write("")
     
     with st.container(border=True):
+
+
+        # st.title("Página de Exibição de Vídeo do Google Drive")
+
+        # # Exibir o vídeo do Google Drive
+        # video_url = "https://drive.google.com/uc?export=download&id=1JsKIAHEYLU9f_JrhFrxlZse2E7O-6qLv"
+
+        # # Usar o player de vídeo do Streamlit
+        # st.video(video_url)
+        # # Exibir um vídeo a partir de uma URL
+        # st.write("Ou assista a partir de um link:")
+        # st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
         st.markdown("<h2 style='text-align: center; padding: 0rem 0rem 0rem'>Importação</h2>", unsafe_allow_html=True)
         corretora = st.selectbox('Escolha a corretora',tables)
         uploaded_files = st.file_uploader("Escolha os arquivos PDF", type="pdf", accept_multiple_files=True)
         if uploaded_files:
                     col1,col2 = st.columns([6,6])
                     if st.button("Processar arquivos"):
-                      if st.session_state.processando:
-                        return
-                      else:
-                        st.session_state.processando = True
                         filenames = [uploaded_file.name for uploaded_file in uploaded_files]
                         not_matching_filenames = check_filename_contains(filenames,corretora)
                         if (not_matching_filenames):
