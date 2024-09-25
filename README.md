@@ -30,7 +30,7 @@ python-dotenv = "^1.0.1"
 plotly = "^5.23.0"
 yfinance = "^0.2.43"
 opencv-python = "^4.10.0.84"
-
+```
 
 ## Variáveis de Ambiente
 
@@ -88,18 +88,6 @@ para selecionar a versão do python com pyenv
 ├── .env
 ├── pyproject.toml
 └── README.md
-
-
-
-utiliza o Python 3.12.1
-poetry como gerenciador de dependencias
-
-para selecionar a versão do python com pyenv
-
-pyenv local 3.12.1
-
-para criar projeto com poetry
-poetry init
 
 
 
