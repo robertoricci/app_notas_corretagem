@@ -90,6 +90,3 @@ Scripts para criação das views
 ```bash
    /Scripts_SQL
    ```
-
-
-
