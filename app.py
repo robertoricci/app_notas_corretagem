@@ -3,10 +3,7 @@ import pag.pag_home as pag_home
 import pag.pag_import as pag_import
 import pag.pag_dasboard as pag_dasboard
 import pag.pag_manut  as pag_manut
-
 from streamlit_option_menu import option_menu
-
-
 
 st.set_page_config(  # Alternate names: setup_page, page, layout
     layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
@@ -49,8 +46,6 @@ def page_dasboard():
 
 def page_manut():
      pag_manut.main()
-
-
 
 if __name__ == "__main__":
    main()

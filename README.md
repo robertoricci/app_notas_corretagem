@@ -1,5 +1,4 @@
-# app_notas_corretagem
-Importador de notas de corretagem 
+# Importador de notas de corretagem 
 
 
 #### Objetivo
@@ -91,23 +90,6 @@ Scripts para criação das views
 ```bash
    /Scripts_SQL
    ```
-
-## Estrutura do Projeto
-
-```plaintext
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   └── components/
-│       ├── __init__.py
-│       └── component1.py
-├── tests/
-│   ├── __init__.py
-│   └── test_main.py
-├── .env
-├── pyproject.toml
-└── README.md
-
 
 
 

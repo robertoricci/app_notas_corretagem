@@ -1,9 +1,7 @@
 import streamlit as st
 
-
 def main():
     st.markdown('<h1 class="title">Home</h1>', unsafe_allow_html=True)
-
     st.markdown("""### Projeto: Importação de PDF de Notas de Corretagem
 
 #### Objetivo
@@ -38,9 +36,14 @@ O sistema será desenvolvido com as seguintes tecnologias:
 5. **Exportação**: O usuário pode exportar os dados para uma planilha CSV .
 
 """)
-
-
-
+    st.write('')
+    st.write('')
+    st.text('Link do projeto')
+    st.link_button("Projeto", "https://github.com/robertoricci/app_notas_corretagem")
+    st.write('')
+    st.text('Link dos PDFs de Notas fiscais de corretagem')
+    st.link_button("PDFs", "https://github.com/robertoricci/app_notas_corretagem/tree/main/NotasCorretagem")
+    
 if __name__ == "__main__":
    main()
 
