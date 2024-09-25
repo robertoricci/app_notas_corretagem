@@ -1,18 +1,24 @@
 # app_notas_corretagem
-Importador de notas de corretagem
+Importador de notas de corretagem 
 
 
-# Nome do Projeto
+#### Objetivo
+O objetivo deste projeto é desenvolver um sistema automatizado para a importação de arquivos PDF contendo notas de corretagem, facilitando a extração, processamento e análise das informações financeiras. 
+O sistema permitirá que usuários importem suas notas de corretagem diretamente em um formato estruturado, proporcionando maior eficiência e precisão no controle de investimentos.
+Dowload das cotações atual dos tickers e assim atualizando os valores do portifolio.
 
-Descrição breve do projeto.
 
-## Visão Geral
+#### Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-- **Python 3.12.1**: Linguagem de programação utilizada no desenvolvimento.
-- **Poetry**: Ferramenta para gerenciamento de dependências e ambientes virtuais.
-- **Streamlit**: Framework utilizado para a criação de interfaces web interativas.
+- **Python**: Linguagem principal para processamento e automação.
+- **Bibliotecas de PDF**: Utilização da biblioteca camelot para a leitura e extração dos dados de PDF.
+- **pandas**: Para manipulação e estruturação dos dados extraídos.
+- **yfinance**: Para dowloados da cotação atualizado dos tickers.                
+- **plotly**: para montagens dos gráficos.   
+- **poetry**: para gerenciamentos das depedências 
+- **Banco de Dados**:  PostgreSQL para armazenamento dos dados processados .
+- **Interface Gráfica**: Desenvolvimento de uma interface gráfica usando o streamlit, para que usuários possam carregar os PDFs e visualizar os dados.
 
 
 O projeto foi desenvolvido utilizando **Python 3.12** e as seguintes bibliotecas:
@@ -71,6 +77,19 @@ para selecionar a versão do python com pyenv
 4. Execute o projeto:
    ```bash
    streamlit run app.py
+   ```
+
+
+## Arquivos auxiliares
+
+PDFs de notas de corretagem
+```bash
+   /NotasCorretagem
+   ```
+
+Scripts para criação das views 
+```bash
+   /Scripts_SQL
    ```
 
 ## Estrutura do Projeto
