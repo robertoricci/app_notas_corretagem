@@ -74,7 +74,7 @@ class PDFTableExtractor:
 
         if not os.path.exists(self.csv_path):
             print(self.csv_path)
-            os.makedirs(self.local_path, exist_ok=True)
+            os.makedirs(self.csv_path, exist_ok=True)
         ##path = os.path.join(self.csv_path, f"{file_name}.csv")
         path =  f"{self.csv_path}/{file_name}.csv"
         df.to_csv(path, sep=";", index=False)

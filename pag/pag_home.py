@@ -34,6 +34,7 @@ O sistema será desenvolvido com as seguintes tecnologias:
    - Taxas e impostos
 4. **Validação e Transformação**: Os dados extraídos são validados e transformados em um formato estruturado através de views
 5. **Exportação**: O usuário pode exportar os dados para uma planilha CSV .
+6. **Exclusão**: O usuário podera excluir as notas de corretagem .
 
 """)
     st.write('')
