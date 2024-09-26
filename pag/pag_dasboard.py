@@ -114,8 +114,8 @@ def main():
     st.write('')
     st.write('')
    
-    st.markdown('<h3 class="subtitulo">Extrado</h3>', unsafe_allow_html=True)
-    st.dataframe(df_filtered)
+    st.markdown('<h3 class="subtitulo">Extrato</h3>', unsafe_allow_html=True)
+    st.dataframe(df_filtered,use_container_width=True)
 
    
     st.markdown('<h3 class="subtitulo">Quantidade por ticker</h3>', unsafe_allow_html=True)
