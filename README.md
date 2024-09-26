@@ -20,11 +20,11 @@ Dowload das cotações atual dos tickers e assim atualizando os valores do porti
 - **Interface Gráfica**: Desenvolvimento de uma interface gráfica usando o streamlit, para que usuários possam carregar os PDFs e visualizar os dados.
 
 
-O projeto foi desenvolvido utilizando **Python 3.12** e as seguintes bibliotecas:
+O projeto foi desenvolvido utilizando **3.11.9** e as seguintes bibliotecas:
 
 ```toml
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11.9"
 streamlit = "^1.37.1"
 streamlit-option-menu = "^0.3.13"
 unidecode = "^1.3.8"
@@ -51,7 +51,7 @@ O projeto requer as seguintes variáveis de ambiente para configurar o acesso ao
 
 para selecionar a versão do python com pyenv
 ```bash
-   pyenv local 3.12.1
+   pyenv local 3.11.9
    ```
 
 1. Clone o repositório:

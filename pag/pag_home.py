@@ -44,9 +44,10 @@ O sistema será desenvolvido com as seguintes tecnologias:
     st.text('Link dos PDFs de Notas fiscais de corretagem')
     st.link_button("PDFs", "https://github.com/robertoricci/app_notas_corretagem/tree/main/NotasCorretagem")
 
-    st.markdown("""## Próximos Passos:
-               #### DBT: para modelagem e transformação das camadas Bronze, Silver e GOLD
-               #### Aiflow: para orquestração dos pipeline de dados""")
+    st.markdown("""## Próximos Passos:""")
+    st.markdown(""" **DBT**: para modelagem e transformação das camadas Bronze, Silver e GOLD""")
+    st.markdown(""" **Apache Airflow**: para agendamento e orquestração dos pipeline de dados""")
+
     
 if __name__ == "__main__":
    main()
