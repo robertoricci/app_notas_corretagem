@@ -2,7 +2,7 @@ import streamlit as st
 from configs.bd.postgree import RDSPostgreSQLManager
 import pandas as pd
 import altair as alt
-import yfinance as yf
+##import yfinance as yf
 
 @st.cache_data(show_spinner="Buscando Cotações...", ttl=60*5)
 def buscar_cotacao(l_ticker,b3 ):
